@@ -1,0 +1,9 @@
+          1         2         3         4         5         6         7
+0123456789012345678901234567890123456789012345678901234567890123456789012345678
+Project Name: Main Menu					  	  By: Hieu Dang
+Screen Name: Sieve of Eratosthenes			  Date: October 20 2020
+
+				Sieve of Eratosthenes
+			[1] Prime numbers with SoE.
+			[2] Recursion with Soe.
+			[3] Back.

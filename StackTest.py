@@ -1,43 +1,45 @@
+#randomFactor(10000, 1000000)
+
 #Name: Hieu Dang
-#Date: 10/11/2020
-import sys
+#Date: 09/21/2020
+
 import time
-#define the Queue
-class Queue:
+#define the Stack
+class Stack:
     def __init__(self):
         self.items = []
-    def enqueue(self, item):
-        self.items.insert(0, item)
-    def dequeue(self):
+    def push(self, item):
+        self.items.append(item)
+    def pop(self):
         self.items.pop(currentPtr - 1)
     def peek(self):
         return self.items[len(self.items)-1]
     def size(self):
-        print("The size of the Queue is:", len(self.items))
+        print("The size of the stack is:", len(self.items))
     def checkTheLimit(self):
         if  len(self.items) < size:
-            print("***There are:", len(self.items),"/", size,"elements in the queue***")
+            print("***There are:", len(self.items),"/", size,"elements in the stack***")
         elif len(self.items) == size:
-            print("***The Queue is full***")
+            print("***The stack is full***")
 
     def process(self):
         global size
         global currentPtr
         currentPtr = 0
-        size = input("How many elements in the Queue you want?: ")
+        size = input("\nHow many elements in the stack you want?: ")     
         while True:
-            print(f'''\n(Enter to skip)''')  
-            choice = input("What you want to do with the Queue (enqueue, dequeue, peek, check, size)?: ")
-            if choice == 'enqueue':
+            print(f'''\n(Enter to skip)''')
+            choice = input("What you want to do with the stack (push, pop, peek, check, size)?: ")
+            if choice == 'push':
                 currentPtr += 1
                 num = int(input("What number do you want to add?: "))
                 if len(self.items) == int(size):
-                    print("***Exceeding Queue size***\n***Ending...")
+                    print("***Exceeding stack size***\n***Ending...")
                     sys.exit()
-                self.enqueue(num)
+                self.push(num)
                 print(self.items)
-            if choice == 'dequeue':
-                self.dequeue()
+            if choice == 'pop':
+                self.pop()
                 currentPtr -= 1
                 print(self.items)
             if choice == 'peek':
@@ -49,9 +51,9 @@ class Queue:
             elif choice == '':
                 print("\nBacking Stack & Queue Menu...")
                 time.sleep(1)
-                break            
+                break 
 
-#call the Queue function:
-if __name__== '__main__':
-    q = Queue()
-    q.process()
+#call the stack function:
+if __name__ == '__main__':
+    s = Stack()
+    s.process()
